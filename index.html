@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- EDIT HERE: Browser title and search description -->
+  <title>Genesis M. Mendoza Celorio | Academic Site</title>
+  <meta name="description" content="Academic website of Genesis M. Mendoza Celorio, PhD research student at the University of Antwerp." />
+  <meta name="author" content="Genesis M. Mendoza Celorio" />
+
+  <style>
+    /*
+      HOW TO EDIT THIS PAGE
+      ---------------------
+      1. Text content is in the HTML body below.
+      2. Colors, spacing, fonts, and layout are in this CSS section.
+      3. Your profile photo is here: assets/profile.jpg
+      4. Your CV should be uploaded here: files/CV.pdf
+    */
+
+    :root {
+      /* EDIT COLORS HERE */
+      --background: #f7f7f5;
+      --card: #ffffff;
+      --text: #111111;
+      --muted: #5f6368;
+      --line: #e5e5e0;
+      --accent: #111111;
+      --soft: #f0f0ec;
+      --max-width: 1080px;
+      --radius: 22px;
+      --shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 247, 245, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 650;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero { padding: 70px 0 44px; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .photo-card {
+      background: var(--card);
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+      color: var(--text);
+    }
+
+    .subtitle {
+      max-width: 680px;
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 26px 0 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 800;
+      border: 1px solid var(--text);
+      background: var(--text);
+      color: white;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 0.95rem;
+    }
+
+    .links a { border-bottom: 1px solid var(--line); }
+    .links a:hover { color: var(--text); border-bottom-color: var(--text); }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .info-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .info-card strong { font-size: 0.98rem; }
+
+    section { padding: 44px 0; }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      color: var(--text);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      letter-spacing: -0.025em;
+      font-size: 1.15rem;
+      color: var(--text);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .date {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .role {
+      font-weight: 850;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 3px;
+      color: var(--text);
+    }
+
+    .place {
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 7px;
+    }
+
+    .description {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .contact-box {
+      background: var(--text);
+      color: white;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box h2 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      color: rgba(255,255,255,0.74);
+      margin: 0;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .contact-buttons .button {
+      background: white;
+      color: var(--text);
+      border-color: white;
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid, .cards, .contact-box, .info-row { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; }
+      .nav { flex-direction: column; align-items: flex-start; padding: 16px 0; }
+      .contact-buttons { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container nav">
+      <!-- EDIT HERE: Short name in the top-left corner -->
+      <a class="brand" href="#top">Genesis M. Mendoza Celorio</a>
+
+      <!-- EDIT HERE: Navigation links. Remove sections you do not want. -->
+      <div class="nav-links">
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="photo-card">
+          <!-- EDIT HERE: Replace assets/profile.jpg with another image if needed -->
+          <img class="photo" src="assets/profile.jpg" alt="Portrait of Genesis M. Mendoza Celorio">
+        </div>
+
+        <div>
+          <!-- EDIT HERE: Main title and introduction -->
+          <h1>Genesis M. Mendoza Celorio</h1>
+          <p class="subtitle">
+            PhD research student at the University of Antwerp working on biomedical imaging,
+            optical coherence tomography, and inflammation assessment for cochlear implant research.
+          </p>
+
+          <div class="actions">
+            <a class="button" href="mailto:GenesisMarisol.MendozaCelorio@uantwerpen.be">Let’s collaborate</a>
+            <a class="button secondary" href="mailto:GenesisMarisol.MendozaCelorio@uantwerpen.be">Academic email</a>
+          </div>
+
+          <div class="links">
+            <a href="https://www.linkedin.com/in/genesis-m-mendoza-celorio-198520178" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="mailto:genegmmc@gmail.com">Personal email</a>
+            <a href="files/CV.pdf" target="_blank" rel="noreferrer">CV</a>
+          </div>
+
+          <p class="subtitle" style="font-size: 1rem; margin-top: 22px;">
+            I am happy to connect with researchers, clinicians, and collaborators interested in
+            biomedical optics, implant research, and advanced imaging methods.
+          </p>
+
+          <div class="info-row">
+            <div class="info-card">
+              <span>Location</span>
+              <strong>Antwerp, Belgium</strong>
+            </div>
+            <div class="info-card">
+              <span>Institution</span>
+              <strong>University of Antwerp</strong>
+            </div>
+            <div class="info-card">
+              <span>Focus</span>
+              <strong>Biomedical imaging</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <div class="cards">
+          <article class="card">
+            <h3>Current research</h3>
+            <p>
+              Assessing cochlear implant inflammation through advanced imaging methods,
+              optical coherence tomography, and novel inflammation sensors.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Highlights</h3>
+            <p>
+              PhD research student · biomedical optics · optical coherence tomography ·
+              experimental imaging.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Interests</h3>
+            <p>
+              Biomedical imaging, optical sensing, inflammation monitoring, cochlear implants,
+              and translational research.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <h2>Research & experience</h2>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="date">Present</div>
+            <div>
+              <div class="role">PhD Research Student</div>
+              <div class="place">University of Antwerp</div>
+              <p class="description">
+                Working on an integrated approach for assessing cochlear implant inflammation
+                using advanced imaging methods and inflammation sensors.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">Current project</div>
+            <div>
+              <div class="role">COCHLEARN</div>
+              <div class="place">Biomedical imaging and inflammation assessment</div>
+              <p class="description">
+                Research focused on connecting optical imaging, inflammation monitoring,
+                and implant-related biological response.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications are intentionally removed for now.
+         When you have publications, you can add a new section here. -->
+
+    <section id="teaching">
+      <div class="container">
+        <h2>Teaching</h2>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="date">Add later</div>
+            <div>
+              <div class="role">Teaching activities</div>
+              <div class="place">University of Antwerp</div>
+              <p class="description">
+                Add teaching assistant work, supervision, workshops, laboratory support,
+                or outreach activities here.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <h2>Contact</h2>
+            <p>
+              Academic email: GenesisMarisol.MendozaCelorio@uantwerpen.be<br>
+              Personal email: genegmmc@gmail.com
+            </p>
+          </div>
+
+          <div class="contact-buttons">
+            <a class="button" href="mailto:GenesisMarisol.MendozaCelorio@uantwerpen.be">Academic email</a>
+            <a class="button" href="https://www.linkedin.com/in/genesis-m-mendoza-celorio-198520178" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Genesis M. Mendoza Celorio · Built for academic visibility.
+  </footer>
+</body>
+</html>
